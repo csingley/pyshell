@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyshell"
+version = "0.0.1"
+authors = [
+  { name="Chris Singley", email="csingley@gmail.com" },
+]
+description = "Simple OS shell written in Python (systems programming exercise"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "click",
+    "type-extensions",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "pylint", "mypy"]
+
+[project.scripts]
+pyshell = "pyshell:main"
